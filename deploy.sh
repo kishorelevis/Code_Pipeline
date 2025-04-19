@@ -1,4 +1,5 @@
 #!/bin/bash
-echo "Deployment script running..."
+echo "Moving files to web server root..."
+sudo cp -r /home/ec2-user/* /var/www/html/
 sudo systemctl restart httpd
-chmod +x deploy.sh
+echo "Deployment completed and Apache restarted."
